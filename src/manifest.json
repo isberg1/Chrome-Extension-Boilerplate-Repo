@@ -1,0 +1,28 @@
+{
+  "name": "Chrome Extension Boilerplate Repo",
+  "description": "Chrome Extension boilerplate repo with React and TypeScript.",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "icons": {},
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus",
+    "debugger",
+    "scripting",
+    "search"
+  ],
+  "action": {
+    "default_icon": {},
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}

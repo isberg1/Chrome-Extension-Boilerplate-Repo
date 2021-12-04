@@ -1,0 +1,8 @@
+.hello {
+  font-weight: 600;
+  font-style: normal;
+}
+.hello:hover {
+  background-color: blue;
+  color: white;
+}
