@@ -10,7 +10,7 @@ module.exports = {
     popup: "./src/Popup.tsx",
     background: "./src/background.ts",
   },
-  devtool: "inline-source-map",
+  // devtool: "inline-source-map",
   devServer: { static: "./dist" },
   plugins: [
     new HtmlWebpackPlugin(),
@@ -20,7 +20,6 @@ module.exports = {
       chunks: ["popup"],
       scriptLoading: "module",
     }),
-    // new webpack.HotModuleReplacementPlugin(), // creates error in brave, only activate when using start_server scrip
     new CopyPlugin({
       patterns: [
         { context: path.resolve(__dirname, "src"), from: "*.json", to: "." },
@@ -39,7 +38,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
