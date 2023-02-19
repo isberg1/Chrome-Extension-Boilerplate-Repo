@@ -16,6 +16,7 @@
     "@babel/preset-react": "^7.16.0",
     "@types/lodash": "^4.14.177",
     "@types/react-dom": "^17.0.11",
+    "@types/chrome": "^0.0.213",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
@@ -30,7 +31,6 @@
   },
   "dependencies": {
     "@types/react": "^17.0.36",
-    "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
