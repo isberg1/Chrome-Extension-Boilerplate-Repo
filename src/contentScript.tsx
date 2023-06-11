@@ -5,7 +5,7 @@ import "./style.css";
 console.log("Hello from contentScript");
 
 function ContentScript() {
-  return <div className="hello">Hello from contentScript</div>;
+  return <div className="bg-red-600">Hello from contentScript</div>;
 }
 
 const body = document.getElementsByTagName("body")[0];

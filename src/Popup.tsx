@@ -5,14 +5,9 @@ import "./style.css";
 const Popup = () => {
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      className="flex flex-col items-center justify-center"
     >
-      <h1 className="hello">Base chorme extention repo with TS and React</h1>
+      <h1 className="bg-red-500 text-xs">Base chorme extention repo with TS and React</h1>
     </div>
   );
 };

@@ -20,15 +20,33 @@ webpack(config, function (err, rest) {
   console.clear();
   console.log("---------------------------------------");
 
+  console.log("\tBuilding", config.watch ? " --watch" : "");
+  console.log(`\t${date.toLocaleString()}`);
+
+
   if (rest?.compilation?.warnings.length) {
-    console.log("warnings:", rest.compilation.warnings);
+    const filteredWarnings = rest.compilation.warnings.filter((v) => {
+      if (!(v instanceof Error)) {
+        return true;
+      }
+      if (!v.stack.includes("AssetsOverSizeLimitWarning")) {
+        return false;
+      }
+      if (!v.stack.includes("EntrypointsOverSizeLimitWarning")) {
+        return false;
+      }
+      return true;
+    });
+
+    if (filteredWarnings.length) {
+      console.log("warnings:", filteredWarnings);
+    }
   }
 
   if (rest?.compilation?.errors.length) {
     console.log("warnings:", rest.compilation.errors);
   }
 
-  console.log("\tBuilding", config.watch ? " --watch" : "");
-  console.log(`\t${date.toLocaleString()}`);
   console.log("---------------------------------------");
 });
+
